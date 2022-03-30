@@ -1,6 +1,6 @@
 # Grid Design Studio - LÖSUNG
 
-***In der Lösung gibt es 2 branches, main ist die ursprümgliche Aufgabe,mobileFirst ist vollständig mit mediaQueries und das CSS ist auf mobile First umgeschrieben.*** 
+***In der Lösung gibt es 2 branches, main ist die ursprüngliche Aufgabe - mobileFirst ist vollständig mit mediaQueries und das CSS ist auf mobile First umgeschrieben.*** 
 
 Ihr habt den Auftrag erhalten, die neue Homepage für das Designstudio _Rimrod & Harris_ zu erstellen. Unten seht Ihr das Mockup für die Website. 
 -
