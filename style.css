@@ -15,13 +15,15 @@ body {
     width: 100%;
     
     grid-template-columns: 10vw 1fr 10vw;
-    grid-template-rows: 100px 1fr 1fr 200px;
+    grid-template-rows: 100px 1fr 1fr auto;
+
 
     grid-template-areas: 
     "header header header"
-    ". main ."
+    "main main main"
     "sec sec sec"
     "footer footer footer";
+
 }
 
 /* ---------HEADER---------------- */
@@ -47,73 +49,65 @@ header nav a {
 
 .main {
     grid-area: main;
-    
-    height: 640px;
     margin: 5px 0;
-
     background-color: #f5f5f5;
     display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 100px 90px 25px 25px 100px 100px 80px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
     gap: 15px;
     padding: 15px;
 }
 
-.main >div {
+.main > div {
     background-size: cover;
 }
-
 .one {
     background-image: url("./images/1.jpg");
-    grid-area: 1/1/2/2;
     /* row-start/column-start/row-end/column-end */
 }
 
 .two {
     background-image: url("./images/2.jpg");
-    grid-area: 1/2/3/3;
-
 }
 
 .three {
     background-image: url("./images/3.jpg");
-    grid-area: 1/3/5/4;
+   
 }
 
 .four {
     background-image: url("./images/4.jpg");
-    grid-area: 1/4/4/5;
+  
 }
 
 .five {
     background-image: url("./images/5.jpg");
-    grid-area: 2/1/6/2;
+   
 }
 
 .six {
     background-image: url("./images/6.jpg");
-    grid-area: 3/2/7/3;
+   
 }
 
 .seven {
     background-image: url("./images/7.jpg");
-    grid-area: 5/3/8/4 ;
+   
 }
 
 .eight {
     background-image: url("./images/8.jpg");
-    grid-area: 4/4/8/5 ;
+   
 }
 
 .nine {
     background-image: url("./images/9.jpg");
-    grid-area: 6/1/8/2;
+    
 }
 
 .ten {
     background-image: url("./images/10.jpg");
-    grid-area: 7/2/8/3;
+    
 }
 
 
@@ -126,17 +120,18 @@ header nav a {
 
 .inner-sec{
     width: 80%;
-    height: 600px;
     margin: 0 auto;
     
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: 200px;
     grid-template-areas:
-    "one two three"
-    ". four five"
-    ". . six"
+    "one one one"
+    "two two two"
+    "three three three"
+    "five six four"
     ;
+
     gap: 5px;
 }
 
@@ -190,7 +185,9 @@ footer {
     padding: 20px 10%;
 
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    
 
 }
 
@@ -202,7 +199,7 @@ footer .foot {
     border: 2px solid lightgrey;
     border-radius: 5px;
     padding: 20px;
-    margin-left: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,8 +209,86 @@ footer .foot {
 }
 
 
+@media screen and (min-width: 600px) {
+    body{
+        grid-template-areas: 
+        "header header header"
+        ". main ."
+        "sec sec sec"
+        "footer footer footer";
+    }
 
-@media screen and (max-width: 600px){
+    .main {
+        height: 640px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 100px 90px 25px 25px 100px 100px 80px;
+    }
+
+    .one {
+        grid-area: 1/1/2/2;
+        /* row-start/column-start/row-end/column-end */
+    }
+    .two {
+        grid-area: 1/2/3/3;
+    }
+    
+    .three {
+        grid-area: 1/3/5/4;
+    }
+    
+    .four {
+        grid-area: 1/4/4/5;
+    }
+    
+    .five {
+        grid-area: 2/1/6/2;
+    }
+    
+    .six {
+        grid-area: 3/2/7/3;
+    }
+    
+    .seven {
+        grid-area: 5/3/8/4 ;
+    }
+    
+    .eight {
+        grid-area: 4/4/8/5 ;
+    }
+    
+    .nine {
+        grid-area: 6/1/8/2;
+    }
+    
+    .ten {
+        grid-area: 7/2/8/3;
+    } 
+    
+    .inner-sec {
+        height: 600px;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+        "one two three"
+        ". four five"
+        ". . six"
+        ;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    footer .foot {
+        margin-left: 20px;
+        margin-bottom: 0;
+    }
+
+}
+
+
+
+/* @media screen and (max-width: 600px){
     body {
         grid-template-areas: 
         "header header header"
@@ -231,4 +306,4 @@ footer .foot {
         "five six four"
         ;
     }
-}
+} */
